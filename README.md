@@ -1,5 +1,7 @@
 # APFS Mount for Windows
 
+![APFS Mount for Windows icon](assets/logo-128.png)
+
 A Windows notification-area app that automatically mounts supported APFS USB drives read-only. Browse and copy files using File Explorer. The application uses WinFsp and independent APFS readers; it does not require a commercial APFS application.
 
 ## Install
@@ -15,7 +17,7 @@ Requirements: Windows x64, .NET 8 SDK, and internet access for the initial NuGet
 .\scripts\Build-Release.ps1
 ```
 
-The release appears in `dist/APFS-Mount-for-Windows-1.0.0-win-x64`. The build downloads the pinned prerequisites, checks their SHA-256 hashes, and validates vendor signatures. It refuses to overwrite an existing release folder. For a new build, supply a new `-OutputDirectory`.
+The release appears in `dist/APFS-Mount-for-Windows-1.0.1-win-x64`. The build downloads the pinned prerequisites, checks their SHA-256 hashes, and validates vendor signatures. It refuses to overwrite an existing release folder. For a new build, supply a new `-OutputDirectory`.
 
 For an offline build with previously downloaded installers:
 

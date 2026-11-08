@@ -48,6 +48,7 @@ internal static class Log
 internal sealed class TrayContext : ApplicationContext
 {
     private readonly NotifyIcon _icon;
+    private readonly System.Drawing.Icon _appIcon;
     private readonly System.Windows.Forms.Timer _timer = new() { Interval = 3000 };
     private readonly Dictionary<string, List<ApfsMountSession>> _mounts = new(StringComparer.OrdinalIgnoreCase);
     private readonly Dictionary<string, DateTime> _retry = new(StringComparer.OrdinalIgnoreCase);
@@ -61,6 +62,8 @@ internal sealed class TrayContext : ApplicationContext
 
     public TrayContext()
     {
+        _appIcon = System.Drawing.Icon.ExtractAssociatedIcon(Environment.ProcessPath!)
+            ?? (System.Drawing.Icon)System.Drawing.SystemIcons.Application.Clone();
         _notifications = new DiskNotifications(removed =>
         {
             _diskRemoved |= removed;
@@ -79,9 +82,9 @@ internal sealed class TrayContext : ApplicationContext
         menu.Items.Add("Retry detected drives", null, (_, _) => { _ignored.Clear(); _retry.Clear(); });
         menu.Items.Add("About APFS Mount for Windows", null, (_, _) =>
         {
-            using var about = new Form { Text = "APFS Mount for Windows", Width = 560, Height = 260, StartPosition = FormStartPosition.CenterScreen };
+            using var about = new Form { Text = "APFS Mount for Windows", Icon = _appIcon, Width = 560, Height = 260, StartPosition = FormStartPosition.CenterScreen };
             about.Controls.Add(new Label { Left = 20, Top = 20, Width = 510, Height = 140,
-                Text = "APFS Mount for Windows 1.0.0\nRead-only APFS USB mounting.\n\nWinFsp - Windows File System Proxy,\nCopyright (C) Bill Zissimopoulos\n\nApplication source: MIT license. Dependency licenses are included." });
+                Text = "APFS Mount for Windows 1.0.1\nRead-only APFS USB mounting.\n\nWinFsp - Windows File System Proxy,\nCopyright (C) Bill Zissimopoulos\n\nApplication source: MIT license. Dependency licenses are included." });
             var link = new LinkLabel { Left = 20, Top = 170, Width = 510, Text = "https://github.com/winfsp/winfsp" };
             link.LinkClicked += (_, _) => Process.Start(new ProcessStartInfo(link.Text) { UseShellExecute = true });
             about.Controls.Add(link);
@@ -93,7 +96,7 @@ internal sealed class TrayContext : ApplicationContext
             Process.Start(new ProcessStartInfo("notepad.exe", Path.Combine(Log.Folder, "activity.log")) { UseShellExecute = true });
         });
         menu.Items.Add("Unmount all and exit", null, async (_, _) => await StopAsync());
-        _icon = new NotifyIcon { Icon = System.Drawing.SystemIcons.Application, Text = "APFS Mount for Windows: watching USB drives", ContextMenuStrip = menu, Visible = true };
+        _icon = new NotifyIcon { Icon = _appIcon, Text = "APFS Mount for Windows: watching USB drives", ContextMenuStrip = menu, Visible = true };
         _timer.Tick += async (_, _) => await ReconcileAsync();
         var runtime = WinFspRuntimeProbe.Inspect();
         Log.Write(runtime.Message);
@@ -191,6 +194,7 @@ internal sealed class TrayContext : ApplicationContext
         foreach (var id in _mounts.Keys.ToArray()) Release(id);
         _icon.Visible = false;
         _icon.Dispose();
+        _appIcon.Dispose();
         _timer.Dispose();
         _notifications.Dispose();
         ExitThread();

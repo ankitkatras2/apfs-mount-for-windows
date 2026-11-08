@@ -1,6 +1,8 @@
 # Release verification
 
-Version 1.0.0, Windows x64.
+Version 1.0.1, Windows x64.
+
+Version 1.0.1 adds the generated Apple-and-USB app icon. The Windows ICO has seven resolutions (16 through 256 pixels). The published executable's icon was extracted and visually checked; the tray and About window use that embedded icon. The package integrity and prerequisite-signature checks passed again. No filesystem behavior was changed by this update.
 
 The underlying implementation previously passed a real USB test: directory enumeration, full photo/video reads, write rejection, and automatic remount after disconnection. The clean release rebuilds the same corrected parser and disk I/O adapters under this product name.
 

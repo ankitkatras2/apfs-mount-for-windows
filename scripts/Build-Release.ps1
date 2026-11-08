@@ -1,7 +1,7 @@
 param([string]$OutputDirectory = '', [string]$PrerequisiteDirectory = '', [switch]$RebuildNative)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
-if (-not $OutputDirectory) { $OutputDirectory = Join-Path $root 'dist\APFS-Mount-for-Windows-1.0.0-win-x64' }
+if (-not $OutputDirectory) { $OutputDirectory = Join-Path $root 'dist\APFS-Mount-for-Windows-1.0.1-win-x64' }
 if (Test-Path -LiteralPath $OutputDirectory) { throw 'Choose a new output directory; release builds never delete or overwrite an existing folder.' }
 if ($RebuildNative) { & (Join-Path $PSScriptRoot 'Build-Native.ps1') }
 $app = Join-Path $OutputDirectory 'app'
