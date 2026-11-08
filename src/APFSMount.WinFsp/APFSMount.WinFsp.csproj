@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APFSMount.Core\APFSMount.Core.csproj" />
+    <PackageReference Include="winfsp.net" Version="2.2.26286" />
+  </ItemGroup>
+</Project>

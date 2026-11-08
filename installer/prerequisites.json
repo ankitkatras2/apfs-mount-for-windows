@@ -1,0 +1,6 @@
+{
+  "WinFspFile": "winfsp-2.2.26286.msi",
+  "DesktopRuntimeFile": "windowsdesktop-runtime-8.0.33-win-x64.exe",
+  "VisualCppFile": "vc_redist.x64.exe",
+  "DesktopRuntimeVersion": "8.0.33"
+}

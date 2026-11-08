@@ -1,0 +1,17 @@
+[
+  {
+    "SHA256": "4DE14DE0B327E801D7A691CB1AFC8A00DB5313A698EF53B979FC6F84FCE631DE",
+    "Url": "https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/8.0.33/windowsdesktop-runtime-8.0.33-win-x64.exe",
+    "File": "windowsdesktop-runtime-8.0.33-win-x64.exe"
+  },
+  {
+    "SHA256": "CC0FF0EB1DC3F5188AE6300FAEF32BF5BEEBA4BDD6E8E445A9184072096B713B",
+    "Url": "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+    "File": "vc_redist.x64.exe"
+  },
+  {
+    "SHA256": "293FFB9BCC0B625C85079FE85FA77F8FE98170ABA51A02AC9C83D58F6C3B0E2F",
+    "Url": "https://github.com/winfsp/winfsp/releases/download/v2.2B5/winfsp-2.2.26286.msi",
+    "File": "winfsp-2.2.26286.msi"
+  }
+]

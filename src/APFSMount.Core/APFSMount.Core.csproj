@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\third_party\SevenZipExtractor\SevenZipExtractor\SevenZipExtractor.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="native\libfsapfs.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Link="libfsapfs.dll" />
+    <None Include="native\apfsmountbridge.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Link="apfsmountbridge.dll" />
+    <None Include="native\zlib.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Link="zlib.dll" />
+  </ItemGroup>
+</Project>
