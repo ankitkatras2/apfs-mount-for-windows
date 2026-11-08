@@ -6,7 +6,15 @@ A Windows notification-area app that automatically mounts supported APFS USB dri
 
 ## Install
 
-Use the separately supplied installation ZIP, extract it, and run **Setup.cmd**. It includes the app and prerequisite installers for offline setup. See [fresh installation instructions](docs/INSTALLATION.md).
+**[Download APFS Mount for Windows 1.0.1 — Windows x64](https://github.com/ankitkatras2/apfs-mount-for-windows/releases/download/v1.0.1/APFS-Mount-for-Windows-1.0.1-win-x64.zip)**
+
+1. Download the installation ZIP above and extract the entire folder.
+2. Run **Setup.cmd** and accept the Windows administrator prompt.
+3. Connect a supported APFS USB drive. Browse and copy files in File Explorer; mounting is read-only.
+
+The ZIP includes the app and prerequisite installers for offline setup on Windows 10/11 x64. No source build is needed. Keep the extracted files together: the application EXE alone is not a complete installation package.
+
+See [fresh installation instructions](docs/INSTALLATION.md) or [release downloads and checksums](https://github.com/ankitkatras2/apfs-mount-for-windows/releases/latest). GitHub's **Code → Download ZIP** and release **Source code** archives contain source, not the ready-to-install app. A private repository requires sign-in and repository access to download releases.
 
 ## Build from this repository
 
