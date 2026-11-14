@@ -83,7 +83,7 @@ try {
     Copy-Item -LiteralPath (Join-Path $package 'Uninstall.ps1') -Destination $destination -Force
     Copy-Item -LiteralPath (Join-Path $package 'INSTALLATION.md') -Destination $destination -Force
     Copy-Item -LiteralPath (Join-Path $package 'licenses') -Destination $destination -Recurse -Force
-    @{ Product=$product; Version='1.0.1'; Task=$taskName; User=$identity.Name } | ConvertTo-Json | Set-Content -LiteralPath $marker
+    @{ Product=$product; Version='1.0.2'; Task=$taskName; User=$identity.Name } | ConvertTo-Json | Set-Content -LiteralPath $marker
     if (-not $NoStartup) {
         $action = New-ScheduledTaskAction -Execute $executable -WorkingDirectory $destination
         $trigger = New-ScheduledTaskTrigger -AtLogOn -User $identity.Name

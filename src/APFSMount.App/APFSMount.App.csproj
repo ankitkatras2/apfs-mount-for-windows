@@ -8,7 +8,7 @@
     <AssemblyName>APFSMountWindows</AssemblyName>
     <Product>APFS Mount for Windows</Product>
     <AssemblyTitle>APFS Mount for Windows</AssemblyTitle>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
   <ItemGroup>

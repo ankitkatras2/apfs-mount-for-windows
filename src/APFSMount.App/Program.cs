@@ -84,7 +84,7 @@ internal sealed class TrayContext : ApplicationContext
         {
             using var about = new Form { Text = "APFS Mount for Windows", Icon = _appIcon, Width = 560, Height = 260, StartPosition = FormStartPosition.CenterScreen };
             about.Controls.Add(new Label { Left = 20, Top = 20, Width = 510, Height = 140,
-                Text = "APFS Mount for Windows 1.0.1\nRead-only APFS USB mounting.\n\nWinFsp - Windows File System Proxy,\nCopyright (C) Bill Zissimopoulos\n\nApplication source: MIT license. Dependency licenses are included." });
+                Text = "APFS Mount for Windows 1.0.2\nRead-only APFS USB mounting.\n\nWinFsp - Windows File System Proxy,\nCopyright (C) Bill Zissimopoulos\n\nApplication source: MIT license. Dependency licenses are included." });
             var link = new LinkLabel { Left = 20, Top = 170, Width = 510, Text = "https://github.com/winfsp/winfsp" };
             link.LinkClicked += (_, _) => Process.Start(new ProcessStartInfo(link.Text) { UseShellExecute = true });
             about.Controls.Add(link);
